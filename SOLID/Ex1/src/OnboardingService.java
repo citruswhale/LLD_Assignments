@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class OnboardingService {
-    private final FakeDb db;
+    private final Persistence db;
 
-    public OnboardingService(FakeDb db) { this.db = db; }
+    public OnboardingService(Persistence db) { this.db = db; }
 
     // Intentionally violates SRP: parses + validates + creates ID + saves + prints.
     public void registerFromRawInput(String raw) {
