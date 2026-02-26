@@ -17,7 +17,7 @@ Hostel fees depend on room type and add-ons. New room types and add-ons will be 
 
 ## 4. Your task
 Checkpoint A: Run and capture output.
-Checkpoint B: Encapsulate room pricing and add-on pricing behind abstractions.
+Checkpoint B: Encapsulate room pricingManager and add-on pricingManager behind abstractions.
 Checkpoint C: Remove switch-case from main calculation logic.
 Checkpoint D: Preserve output.
 
@@ -48,7 +48,7 @@ Saved booking: H-7781
 ```
 
 ## 9. Hints (OOP-only)
-- Prefer a list of pricing components (room + add-ons) that contribute to totals.
+- Prefer a list of pricingManager components (room + add-ons) that contribute to totals.
 - Keep printing separate from calculation.
 
 ## 10. Stretch goals
