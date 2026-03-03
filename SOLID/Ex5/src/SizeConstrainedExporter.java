@@ -13,6 +13,6 @@ public class SizeConstrainedExporter extends Exporter {
             throw new IllegalArgumentException("PDF cannot handle content > 20 chars");
         }
 
-        return delegateExporter.export(req);
+        return delegateExporter.doExport(req);
     }
 }
