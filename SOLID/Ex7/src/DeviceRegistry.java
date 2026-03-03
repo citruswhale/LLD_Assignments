@@ -1,14 +1,26 @@
 import java.util.*;
 
 public class DeviceRegistry {
-    private final java.util.List<SmartClassroomDevice> devices = new ArrayList<>();
+    private final List<Object> devices = new ArrayList<>(); // Keep generic ArrayList for diversied devices
 
-    public void add(SmartClassroomDevice d) { devices.add(d); }
+    public void add(Object d) { devices.add(d); } // Allow adding any type of device
 
-    public SmartClassroomDevice getFirstOfType(String simpleName) {
-        for (SmartClassroomDevice d : devices) {
-            if (d.getClass().getSimpleName().equals(simpleName)) return d;
+    public <T> T getFirstWithAll(List<Class<?>> capabilities) {
+        for (Object d : devices) {
+            boolean matches = true;
+
+            for (Class<?> cap : capabilities) {
+                if (!cap.isInstance(d)) {
+                    matches = false;
+                    break;
+                }
+            }
+
+            if (matches) {
+                return (T) d;
+            }
         }
-        throw new IllegalStateException("Missing: " + simpleName);
+
+        throw new IllegalStateException("No device supports all required capabilities");
     }
 }
