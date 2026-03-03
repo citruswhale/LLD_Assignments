@@ -12,7 +12,8 @@ public class EmailSender extends NotificationSender {
 
     @Override
     protected void doSend(Notification n) {
-        System.out.println("EMAIL -> to=" + n.email + " subject=" + n.subject + " body=" + n.body);
+        String msg = "EMAIL -> to=" + n.email + " subject=" + n.subject + " body=" + n.body;
+        ConsolePreview.preview(msg);
     }
 
     @Override

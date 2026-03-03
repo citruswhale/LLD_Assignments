@@ -13,7 +13,8 @@ public class WhatsAppSender extends NotificationSender {
 
     @Override
     protected void doSend(Notification n) {
-        System.out.println("WA -> to=" + n.phone + " body=" + n.body);
+        String msg = "WA -> to=" + n.phone + " body=" + n.body;
+        ConsolePreview.preview(msg);
     }
 
     @Override

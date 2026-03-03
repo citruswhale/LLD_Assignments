@@ -12,7 +12,8 @@ public class SmsSender extends NotificationSender {
 
     @Override
     protected void doSend(Notification n) {
-        System.out.println("SMS -> to=" + n.phone + " body=" + n.body);
+        String msg = "SMS -> to=" + n.phone + " body=" + n.body;
+        ConsolePreview.preview(msg);
     }
 
     @Override
